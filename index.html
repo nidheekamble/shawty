@@ -1,6 +1,30 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="static/logo.ico">
+    
+    <!--
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    -->
+    <!--Import materialize.css-->
+
+    <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css" media="screen,projection"/>
 </head>
+  
 <body>
+  <div class="input-field col s6">
+      <input placeholder="Enter long URL" id="URLinput" type="url" class="validate"> 
+      <label>Enter URL</label>
+    <button class="button-border hoverable waves-effect waves-light btn-large amber accent-2 black-text" type="submit" name="action" onclick=”shortenURL()”>Shorten URL</button>
+    <script src=”main.js”></script>
+  </div>
 </body>
 </html>
