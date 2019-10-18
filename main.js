@@ -1,10 +1,5 @@
 var endPoint = "https://www.jsonstore.io/b198970ae4af630ad693075a720ac4b703881b951d47af7b1e3ba686de367116";
 
-function getRandomString() {
-  var _randomString = Math.random.toString(32).substring(2.5) + Math.random.toString(32).substring(2.5);
-  return _randomString;
-}
-
 function getURL() {
   var URLinput = document.getElementById("URLinput").value;
   var hasProtocol = URLinput.startsWith("https://") || URLinput.startsWith("http://") || URLinput.startsWith("ftp://");
@@ -17,10 +12,15 @@ function getURL() {
     return URLinput;
 }
 
+function getRandomString() {
+  var _randomString = Math.random.toString(32).substring(2.5) + Math.random.toString(32).substring(2.5);
+  return _randomString;
+}
+
 function generateHash() {
   if (window.location.hash = "")
   {
-    window.location.hash = getrandom();
+    window.location.hash = getRandomString();
   }
 }
 
@@ -32,7 +32,7 @@ function sendRequest(url) {
     'data': JSON.stringify(this.url),
     'dataType': 'json',
     ‘contentType’: ‘application/json; charset=utf-8’
-  });
+  })
 }
 
 function shortenURL() {
@@ -42,6 +42,7 @@ function shortenURL() {
 }
 
 var newHash = window.location.hash.substr(1);
+
 if (window.location.hash != "") {
   $.getJSON(endpoint + "/" + newHash, 
       function (data) {
